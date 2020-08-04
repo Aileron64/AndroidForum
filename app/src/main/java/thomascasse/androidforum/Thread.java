@@ -6,6 +6,11 @@ public class Thread
     private String Title;
     private String Desc;
 
+    public Thread()
+    {
+
+    }
+
     public Thread(String name, String title, String desc)
     {
         Name = name;
