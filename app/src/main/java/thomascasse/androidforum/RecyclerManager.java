@@ -1,9 +1,12 @@
 package thomascasse.androidforum;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -38,6 +41,20 @@ public class RecyclerManager
 
             title = (TextView) itemView.findViewById(R.id.titleTextView);
             name = (TextView) itemView.findViewById(R.id.nameTextView);
+
+            itemView.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    Intent showThread = new Intent(context, ThreadActivity.class);
+                    showThread.putExtra("thomascasse.THREAD_KEY", key);
+                    //showThread.putExtra("thomascasse.THREAD_TITLE", key);
+                    //showThread.putExtra("thomascasse.THREAD_NAME", key);
+                    //showThread.putExtra("thomascasse.THREAD_DESC", key);
+                    context.startActivity(showThread);
+                }
+            });
         }
 
         public void bind(Thread thread, String key)

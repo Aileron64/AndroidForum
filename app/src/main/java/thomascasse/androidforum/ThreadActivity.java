@@ -15,11 +15,9 @@ public class ThreadActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thread);
 
-        Intent in = getIntent();
-
-        int index = in.getIntExtra("thomascasse.THREAD_ID", -1);
+        String threadKey = getIntent().getStringExtra("thomascasse.THREAD_KEY");
 
         TextView threadTitle = (TextView)findViewById(R.id.threadTitle);
-        threadTitle.setText("Title: " + index);
+        threadTitle.setText(threadKey);
     }
 }
