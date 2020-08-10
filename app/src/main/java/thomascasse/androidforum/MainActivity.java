@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
                 findViewById(R.id.loading_icon).setVisibility(View.GONE);
 
                 new RecyclerManager().setConfig(recyclerView,
-                        MainActivity.this, posts, keys, true);
+                        MainActivity.this, posts, keys, true, R.layout.thread_list_item);
             }
 
             @Override

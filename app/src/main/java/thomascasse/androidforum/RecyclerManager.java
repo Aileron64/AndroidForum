@@ -19,13 +19,15 @@ public class RecyclerManager
     private Context context;
     private ThreadAdapter threadAdapter;
     private boolean clickable;
+    private int layoutResource;
 
     public void setConfig(RecyclerView recyclerView, Context context, List<Post> posts, List<String> keys,
-                          boolean clickable)
+                          boolean clickable, int layoutResource)
     {
         this.context = context;
         this.threadAdapter = new ThreadAdapter(posts, keys);
         this.clickable = clickable;
+        this.layoutResource = layoutResource;
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(threadAdapter);
     }
@@ -40,7 +42,7 @@ public class RecyclerManager
         public ThreadItemView(ViewGroup parent)
         {
             super(LayoutInflater.from(context).
-                    inflate(R.layout.thread_list_item, parent, false));
+                    inflate(layoutResource, parent, false));
 
             title = (TextView) itemView.findViewById(R.id.titleTextView);
             name = (TextView) itemView.findViewById(R.id.nameTextView);

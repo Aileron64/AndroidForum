@@ -39,7 +39,7 @@ public class ThreadActivity extends AppCompatActivity
                 findViewById(R.id.loading_icon).setVisibility(View.GONE);
 
                 new RecyclerManager().setConfig(recyclerView,
-                        ThreadActivity.this, posts, keys, false);
+                        ThreadActivity.this, posts, keys, false, R.layout.post_list_item);
             }
 
             @Override

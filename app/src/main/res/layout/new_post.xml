@@ -14,18 +14,19 @@
     <EditText
         android:id="@+id/enterResponse"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="85dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:gravity="start|top"
         android:hint="Response"
-        android:inputType="textPersonName" />
+        android:inputType="textMultiLine" />
 
     <EditText
         android:id="@+id/enterName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Alias"
         android:inputType="textPersonName" />
 
     <Button
